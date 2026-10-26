@@ -6,7 +6,7 @@ export default function About() {
     { number: '2012', label: 'Journey Started' },
     { number: '114+', label: 'PAN India Cities' },
     { number: '4+', label: 'HQ & Branch Offices' },
-    { number: '24x7', label: 'Operating Support' },
+    { number: '24×7', label: 'Operating Support' },
   ];
 
   const features = [
@@ -86,13 +86,16 @@ export default function About() {
           </div>
 
           {/* Stats Showcase Box */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 bg-gradient-to-br from-blue-50/50 via-white to-amber-50/50 p-6 sm:p-8 rounded-[36px] border border-blue-100 shadow-xl shadow-blue-900/5">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 bg-white p-6 sm:p-8 rounded-[36px] border border-blue-100/80 shadow-xl shadow-blue-900/5">
             {stats.map((stat, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-white border border-gray-100 shadow-xs text-center">
-                <span className="text-3xl sm:text-4xl font-black text-amber-500 block">
+              <div
+                key={idx}
+                className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-100 shadow-md shadow-slate-100/80 text-center hover:shadow-lg hover:border-amber-200 transition-all duration-200"
+              >
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-amber-500 block">
                   {stat.number}
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-gray-600 mt-1 block">
+                <span className="text-xs sm:text-sm md:text-base font-bold text-slate-700 mt-2 block">
                   {stat.label}
                 </span>
               </div>

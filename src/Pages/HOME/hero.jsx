@@ -246,15 +246,15 @@ export default function Hero() {
 
   return (
     <div id="home" className="relative w-full bg-gradient-to-b from-[#f3f8fd] via-[#f7faff] to-[#e6f1fc] overflow-hidden">
-      
+
       {/* =========================================================================
           1. MOBILE VERSION (SAME TO SAME AS USER SCREENSHOT: md:hidden)
          ========================================================================= */}
       <div className="block md:hidden w-full pb-6">
-        
+
         {/* Mobile Car Showcase Frame (Image is Background: Upper Sky contains Headline, Middle contains SUV) */}
         <div className="relative w-full aspect-[4/5] min-h-[520px] max-h-[620px] -mt-20 overflow-hidden">
-          
+
           {/* Background Photo: Toyota Luxury SUV with Sky, Sunset & Modern Villa */}
           <img
             src={heroImage}
@@ -274,11 +274,11 @@ export default function Hero() {
               Y O U R &nbsp; J O U R N E Y
             </p>
 
-            {/* Main Headline */}
-            <h1 className="mt-1 text-[38px] leading-[1.08] font-black text-[#0b1a30] tracking-tight drop-shadow-xs">
-              Car Rental
+            {/* Main Headline (Single Line) */}
+            <h1 className="mt-1 text-[24px] xs:text-[27px] sm:text-[32px] leading-tight font-black text-[#0b1a30] tracking-tight drop-shadow-xs whitespace-nowrap">
+              Car and Bus Rental
             </h1>
-            <h2 className="text-[38px] leading-[1.08] font-black tracking-tight mt-0.5 drop-shadow-xs">
+            <h2 className="text-[24px] xs:text-[27px] sm:text-[32px] leading-tight font-black tracking-tight mt-0.5 drop-shadow-xs whitespace-nowrap">
               <span className="text-[#d99b26]">Made</span>{' '}
               <span className="text-[#0b1a30]">Simple</span>
             </h2>
@@ -295,18 +295,17 @@ export default function Hero() {
         {/* Mobile Booking / Search Card (Overlapping the bottom of the car picture) */}
         <div className="relative z-30 px-3.5 -mt-10 sm:-mt-14">
           <div className="bg-white rounded-3xl shadow-xl shadow-blue-900/10 border border-gray-100 p-4">
-            
+
             {/* Top 3 Tab Buttons (All in 1 Row) */}
             <div className="grid grid-cols-3 gap-2 mb-3.5">
               {/* Tab 1: Self Drive */}
               <button
                 type="button"
                 onClick={() => setTripType('self-drive')}
-                className={`py-3 px-1.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                  tripType === 'self-drive'
+                className={`py-3 px-1.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${tripType === 'self-drive'
                     ? 'bg-[#1e61d8] text-white shadow-md shadow-blue-500/25'
                     : 'bg-[#f0f4f9] text-[#1e293b] hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H8c-.7 0-1.3.3-1.8.7C5.3 8.6 4 10 4 10s-2.7.6-4.5 1.1C.7 11.3 0 12.1 0 13v3c0 .6.4 1 1 1h2m16 0a2 2 0 11-4 0m4 0a2 2 0 10-4 0M3 17a2 2 0 114 0m-4 0a2 2 0 104 0" />
@@ -318,11 +317,10 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => setTripType('with-driver')}
-                className={`py-3 px-1.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                  tripType === 'with-driver'
+                className={`py-3 px-1.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${tripType === 'with-driver'
                     ? 'bg-[#1e61d8] text-white shadow-md shadow-blue-500/25'
                     : 'bg-[#f0f4f9] text-[#1e293b] hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -334,11 +332,10 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => setTripType('airport-transfer')}
-                className={`py-3 px-1.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                  tripType === 'airport-transfer'
+                className={`py-3 px-1.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${tripType === 'airport-transfer'
                     ? 'bg-[#1e61d8] text-white shadow-md shadow-blue-500/25'
                     : 'bg-[#f0f4f9] text-[#1e293b] hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -349,7 +346,7 @@ export default function Hero() {
 
             {/* 3 Input Fields Vertical Stack */}
             <div className="space-y-3">
-              
+
               {/* Field 1: Passenger */}
               <div className="relative">
                 <div className="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-200/90 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 bg-white transition-all">
@@ -433,7 +430,7 @@ export default function Hero() {
 
         {/* Mobile 3 Trust Badges (Horizontal 3-Column with Dividers) */}
         <div className="mt-8 px-2 max-w-lg mx-auto grid grid-cols-3 divide-x divide-gray-200 text-center">
-          
+
           {/* Badge 1: Safe & Secure */}
           <div className="flex flex-col items-center px-1">
             <div className="w-12 h-12 rounded-full bg-[#eef5ff] text-[#1e61d8] flex items-center justify-center mb-2 shadow-xs">
@@ -496,7 +493,7 @@ export default function Hero() {
           2. DESKTOP / TABLET VERSION (hidden md:block)
          ========================================================================= */}
       <div className="hidden md:block w-full -mt-20 pb-14 sm:pb-20">
-        
+
         {/* Decorative Soft Background Waves */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
@@ -516,16 +513,16 @@ export default function Hero() {
 
 
             {/* Left Content Area (Tucked placement) */}
-            <div className="absolute top-36 left-14 lg:left-24 z-10 max-w-xl">
+            <div className="absolute top-36 left-14 lg:left-24 z-10 max-w-2xl">
               <p className="text-xs sm:text-sm font-bold tracking-[0.28em] text-gray-600 uppercase">
                 Y O U R &nbsp; J O U R N E Y
               </p>
 
-              <h1 className="mt-2 text-5xl lg:text-7xl font-black tracking-tight text-[#0b1a30] leading-[1.05]">
-                Car Rental
+              <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] font-black tracking-tight text-[#0b1a30] leading-tight whitespace-nowrap">
+                Car and Bus Rental
               </h1>
 
-              <h2 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1.05] mt-1">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] font-black tracking-tight leading-tight mt-1 whitespace-nowrap">
                 <span className="text-[#e5a93c]">Made</span>{' '}
                 <span className="text-[#0b1a30]">Simple</span>
               </h2>
@@ -541,17 +538,16 @@ export default function Hero() {
 
         {/* Floating Search Booking Box Area */}
         <div className="relative z-30 max-w-6xl mx-auto px-4 -mt-36 lg:-mt-44 xl:-mt-48">
-          
+
           {/* Top Service Selection Tabs */}
           <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-t-3xl border border-b-0 border-gray-100 shadow-md p-1.5 gap-1">
             <button
               type="button"
               onClick={() => setTripType('self-drive')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                tripType === 'self-drive'
+              className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${tripType === 'self-drive'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H8c-.7 0-1.3.3-1.8.7C5.3 8.6 4 10 4 10s-2.7.6-4.5 1.1C.7 11.3 0 12.1 0 13v3c0 .6.4 1 1 1h2m16 0a2 2 0 11-4 0m4 0a2 2 0 10-4 0M3 17a2 2 0 114 0m-4 0a2 2 0 104 0" />
@@ -562,11 +558,10 @@ export default function Hero() {
             <button
               type="button"
               onClick={() => setTripType('with-driver')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                tripType === 'with-driver'
+              className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${tripType === 'with-driver'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -577,11 +572,10 @@ export default function Hero() {
             <button
               type="button"
               onClick={() => setTripType('airport-transfer')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                tripType === 'airport-transfer'
+              className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${tripType === 'airport-transfer'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -593,7 +587,7 @@ export default function Hero() {
           {/* Main Search Bar Form Container */}
           <div className="bg-white rounded-3xl rounded-tl-none shadow-xl shadow-blue-900/10 border border-gray-100 p-5">
             <div className="grid grid-cols-4 gap-4 items-center">
-              
+
               {/* Field 1: Passenger */}
               <div className="relative">
                 <div className="flex items-center gap-3 p-4 rounded-2xl bg-gray-50 hover:bg-gray-100/70 border border-gray-200/70 focus-within:border-blue-500 focus-within:bg-white focus-within:ring-2 focus-within:ring-blue-100 transition-all">
@@ -681,7 +675,7 @@ export default function Hero() {
 
         {/* Bottom Trust & Feature Badges (Desktop) */}
         <div className="mt-16 max-w-4xl mx-auto grid grid-cols-3 gap-8 items-center justify-items-center">
-          
+
           {/* Badge 1: Safe & Secure */}
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0 shadow-xs">
@@ -729,7 +723,7 @@ export default function Hero() {
           3. OUR SERVICES SECTION (WHITE BACKGROUND AS REQUESTED)
          ========================================================================= */}
       <section id="services" className="relative w-full bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-t border-gray-100">
-        
+
         {/* Subtle Ambient Decorative Glows */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
@@ -783,7 +777,7 @@ export default function Hero() {
 
           {/* 3 Detailed Service Columns (Shuttle Services, Employee Transportation, Cab Services on Call Basis) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-stretch">
-            
+
             {/* Column 1: Shuttle Services */}
             <div className="flex flex-col justify-between p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all duration-300 group">
               <div>
@@ -880,7 +874,7 @@ export default function Hero() {
           4. EMPLOYEE AND WOMEN SAFETY SECTION (EXACT DESIGN MATCHING USER SLIDE)
          ========================================================================= */}
       <section id="safety" className="relative w-full bg-[#051329] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden text-white border-t border-slate-800">
-        
+
         {/* Subtle Ambient Decorative Glows */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -980,7 +974,7 @@ export default function Hero() {
              ========================================================================= */}
           <div className="mt-14 sm:mt-20 max-w-4xl mx-auto bg-[#071732] border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-md">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-              
+
               {/* Left Column: World Class Customer Support */}
               <div>
                 <h3 className="text-xl sm:text-2xl font-black text-amber-500 uppercase tracking-wider mb-6">
@@ -1146,7 +1140,7 @@ export default function Hero() {
               <span className="absolute bottom-0 right-0 w-8 h-8 sm:w-14 sm:h-14 border-b-3 border-r-3 border-amber-500 pointer-events-none rounded-br-3xl"></span>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                
+
                 {/* Left Column */}
                 <div className="space-y-7">
                   {/* INTRODUCTION TO CHAUFFEURING */}
@@ -1326,7 +1320,7 @@ export default function Hero() {
               <span className="absolute bottom-0 right-0 w-8 h-8 sm:w-14 sm:h-14 border-b-3 border-r-3 border-amber-500 pointer-events-none rounded-br-3xl"></span>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                
+
                 {/* Left Column */}
                 <div className="space-y-7">
                   {/* NAVIGATION AND ROUTE PLANNING */}
@@ -1629,10 +1623,10 @@ export default function Hero() {
             {/* Slide-Style 2-Column Box (Identical to user's Reach Us At screenshot) */}
             <div className="max-w-5xl mx-auto bg-[#071732] border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-md">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                
+
                 {/* Left Column: 4 Office Addresses (7 cols on lg) */}
                 <div className="lg:col-span-7 space-y-6">
-                  
+
                   {/* Pune (HO) */}
                   <div className="border-b border-white/10 pb-5">
                     <div className="flex items-center gap-2 mb-1.5">
