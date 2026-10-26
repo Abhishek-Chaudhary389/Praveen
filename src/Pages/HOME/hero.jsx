@@ -785,41 +785,89 @@ export default function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-stretch">
             
             {/* Column 1: Shuttle Services */}
-            <div className="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-gray-50/80 border border-gray-200/80 hover:bg-white hover:border-amber-400 hover:shadow-xl transition-all duration-300 group">
+            <div className="flex flex-col justify-between p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all duration-300 group">
               <div>
-                <div className="w-10 h-1 bg-amber-500 rounded-full mb-4 group-hover:w-16 transition-all duration-300"></div>
-                <h3 className="text-2xl font-black text-amber-600 tracking-tight mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-600 block mb-1">
+                  Airport & Corporate Shuttles
+                </span>
+                <h3 className="text-2xl font-black text-[#0b1a30] tracking-tight mb-4 group-hover:text-amber-600 transition-colors">
                   Shuttle Services
                 </h3>
-                <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
                   We offer a fast, convenient, and cost effective solution for booking airport ground transportation worldwide. Our reliable service allows travellers to compare prices and choose the best option for a seamless journey. Whether for business or leisure, we ensure safe, comfortable, and hassle-free travel at competitive rates.
                 </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <a
+                  href="tel:+919545899838"
+                  className="w-full py-3 rounded-xl bg-gray-100 hover:bg-amber-400 hover:text-black text-[#0b1a30] text-xs font-black uppercase tracking-wider text-center block transition-all shadow-xs"
+                >
+                  Inquire This Service →
+                </a>
               </div>
             </div>
 
             {/* Column 2: Employee Transportation */}
-            <div className="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-gray-50/80 border border-gray-200/80 hover:bg-white hover:border-amber-400 hover:shadow-xl transition-all duration-300 group">
+            <div className="flex flex-col justify-between p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all duration-300 group">
               <div>
-                <div className="w-10 h-1 bg-amber-500 rounded-full mb-4 group-hover:w-16 transition-all duration-300"></div>
-                <h3 className="text-2xl font-black text-amber-600 tracking-tight mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-600 block mb-1">
+                  Enterprise Staff Commute
+                </span>
+                <h3 className="text-2xl font-black text-[#0b1a30] tracking-tight mb-4 group-hover:text-amber-600 transition-colors">
                   Employee Transportation
                 </h3>
-                <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
                   We provide a comprehensive solution for efficient, safe, and transparent employee and corporate staff transportation. With advanced tracking systems and real-time monitoring, we ensure seamless and secure commutes. Our well-maintained fleet and trained drivers guarantee a reliable and hassle-free travel experience for businesses.
                 </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <a
+                  href="tel:+919545899838"
+                  className="w-full py-3 rounded-xl bg-gray-100 hover:bg-amber-400 hover:text-black text-[#0b1a30] text-xs font-black uppercase tracking-wider text-center block transition-all shadow-xs"
+                >
+                  Inquire This Service →
+                </a>
               </div>
             </div>
 
             {/* Column 3: Cab Services on Call Basis */}
-            <div className="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-gray-50/80 border border-gray-200/80 hover:bg-white hover:border-amber-400 hover:shadow-xl transition-all duration-300 group">
+            <div className="flex flex-col justify-between p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all duration-300 group">
               <div>
-                <div className="w-10 h-1 bg-amber-500 rounded-full mb-4 group-hover:w-16 transition-all duration-300"></div>
-                <h3 className="text-2xl font-black text-amber-600 tracking-tight mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-600 block mb-1">
+                  24x7 On-Demand Fleet
+                </span>
+                <h3 className="text-2xl font-black text-[#0b1a30] tracking-tight mb-4 group-hover:text-amber-600 transition-colors">
                   Cab Services on Call Basis
                 </h3>
-                <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
                   As India's leading on-call cab service, we offer reliable and efficient transportation solutions across PAN India. Specializing in corporate cab services and car rentals, we ensure safe, comfortable, and punctual travel. With a well-maintained fleet and professional chauffeurs, we provide seamless and affordable commuting experiences.
                 </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <a
+                  href="tel:+919545899838"
+                  className="w-full py-3 rounded-xl bg-gray-100 hover:bg-amber-400 hover:text-black text-[#0b1a30] text-xs font-black uppercase tracking-wider text-center block transition-all shadow-xs"
+                >
+                  Inquire This Service →
+                </a>
               </div>
             </div>
 

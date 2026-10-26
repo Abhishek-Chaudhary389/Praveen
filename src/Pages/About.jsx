@@ -58,13 +58,6 @@ export default function About() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-600 text-xs font-extrabold uppercase tracking-widest mb-3">
               <span>✦</span> ABOUT OUR COMPANY
             </div>
-            <div className="mb-4">
-              <img
-                src="/logo.png"
-                alt="Parveen Fleets Pvt. Ltd."
-                className="h-20 sm:h-24 w-auto object-contain drop-shadow-xs"
-              />
-            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b1a30] tracking-tight leading-tight">
               Parveen Fleet <br />
               <span className="text-amber-500">Private Limited</span>
