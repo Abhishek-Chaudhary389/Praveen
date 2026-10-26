@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#071325] text-white pt-16 pb-12 border-t border-slate-800">
+    <footer className="bg-[#071325] text-white pt-16 pb-24 sm:pb-20 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Tagline Banner */}
@@ -124,9 +124,20 @@ export default function Footer() {
 
         </div>
 
-        <div className="mt-12 pt-6 border-t border-slate-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mt-12 pt-6 border-t border-slate-800 text-xs text-gray-400 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
           <span>© 2026 Parveen Fleet Private Limited. All rights reserved.</span>
-          <span className="text-gray-400">Pune • Mumbai • Delhi • Hyderabad • 114+ Cities PAN India</span>
+          <span className="text-gray-400 hidden sm:inline">Pune • Mumbai • Delhi • Hyderabad • 114+ Cities PAN India</span>
+          <p className="text-xs text-gray-400">
+            Developed by{' '}
+            <a
+              href="https://www.snstudio.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-400 hover:text-amber-300 font-bold hover:underline transition-colors"
+            >
+              SN studio
+            </a>
+          </p>
         </div>
       </div>
     </footer>
