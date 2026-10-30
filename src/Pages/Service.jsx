@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { sendBookingQuery, BOOKING_PHONE_DISPLAY, BOOKING_EMAIL } from '../utils/bookingDispatcher';
 
 export default function Service() {
   const [booking, setBooking] = useState({
@@ -13,10 +14,11 @@ export default function Service() {
   const handleBookingSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    const msg = encodeURIComponent(
-      `Hello Parveen Fleet Booking Desk,\n\nI want to book an Instant Reservation:\n👤 Name: ${booking.name}\n📍 Pickup Point: ${booking.pickup}\n🧭 Drop Point: ${booking.drop}\n📅 Travel Date: ${booking.date}\n\nPlease confirm availability and fare.`
-    );
-    window.open(`https://wa.me/919545899838?text=${msg}`, '_blank');
+    const subject = `Service Reservation Query: ${booking.pickup} to ${booking.drop} (${booking.name})`;
+    const msg = `Hello Parveen Fleet Booking Desk,%0A%0AI want to book an Instant Reservation:%0A👤 Name: ${booking.name}%0A📍 Pickup: ${booking.pickup}%0A🧭 Drop: ${booking.drop}%0A📅 Travel Date: ${booking.date}%0A%0APlease confirm availability and fare.`;
+    const details = `PARVEEN FLEETS - SERVICE RESERVATION QUERY%0D%0A%0D%0AName: ${booking.name}%0D%0APickup Location: ${booking.pickup}%0D%0ADrop Location: ${booking.drop}%0D%0ATravel Date: ${booking.date}%0D%0A%0D%0APlease share quotation and confirm availability.`;
+
+    sendBookingQuery({ subject, message: msg, details });
     setTimeout(() => setSubmitted(false), 6000);
   };
 
@@ -341,7 +343,7 @@ export default function Service() {
 
                 <div className="mt-8 pt-6 border-t border-gray-100">
                   <a
-                    href="tel:+919545899838"
+                    href="tel:+917767000838"
                     className="w-full py-3 rounded-xl bg-gray-100 hover:bg-amber-400 hover:text-black text-[#0b1a30] text-xs font-black uppercase tracking-wider text-center block transition-all shadow-xs"
                   >
                     Inquire This Service →
@@ -368,7 +370,7 @@ export default function Service() {
                 Need Customized Enterprise Transportation?
               </h3>
               <p className="text-xs sm:text-sm text-gray-300 mt-2 max-w-2xl font-normal">
-                Call our dedicated fleet managers directly at <strong className="text-amber-400">+91 95458 99838</strong> / <strong className="text-amber-400">+91 77440 00844</strong> or write to <span className="text-white font-medium">sales@parveenfleets.in</span>.
+                Call our dedicated fleet managers directly at <strong className="text-amber-400">+91 77670 00841</strong> / <strong className="text-amber-400">+91 77670 00836</strong> / <strong className="text-amber-400">+91 95458 99838</strong> or write to <span className="text-white font-medium">sales@parveenfleets.in</span>.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto flex-shrink-0">

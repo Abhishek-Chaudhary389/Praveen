@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sendBookingQuery, BOOKING_PHONE_DISPLAY, BOOKING_EMAIL } from '../utils/bookingDispatcher';
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -45,11 +46,11 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
-    // WhatsApp direct message trigger
-    const text = encodeURIComponent(
-      `Hello Parveen Fleet Team,\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nBranch: ${formData.city}\nService: ${formData.service}\nDetails: ${formData.message}`
-    );
-    window.open(`https://wa.me/919545899838?text=${text}`, '_blank');
+    const subject = `Booking & Fleet Inquiry: ${formData.service} - ${formData.name}`;
+    const message = `Hello Parveen Fleet Team,%0A%0A• Name: ${formData.name}%0A• Phone: ${formData.phone}%0A• Email: ${formData.email}%0A• Branch: ${formData.city}%0A• Service: ${formData.service}%0A• Details: ${formData.message}`;
+    const details = `PARVEEN FLEETS - BOOKING & CONTACT INQUIRY%0D%0A%0D%0ACustomer Name: ${formData.name}%0D%0APhone: ${formData.phone}%0D%0AEmail: ${formData.email}%0D%0APreferred Branch: ${formData.city}%0D%0AService Requested: ${formData.service}%0D%0AMessage / Details: ${formData.message}%0D%0A%0D%0APlease contact client and confirm details.`;
+
+    sendBookingQuery({ subject, message, details });
     setTimeout(() => setFormSubmitted(false), 5000);
   };
 
@@ -91,11 +92,14 @@ export default function Contact() {
               </svg>
             </div>
             <span className="text-xs font-black uppercase tracking-wider text-amber-600 block mb-1">Call At</span>
-            <a href="tel:+919545899838" className="text-lg font-black text-[#0b1a30] hover:text-amber-600 block transition-colors">
-              +91 95458 99838
+            <a href="tel:+917767000841" className="text-lg font-black text-[#0b1a30] hover:text-amber-600 block transition-colors">
+              +91 77670 00841
             </a>
-            <a href="tel:+917744000844" className="text-base font-bold text-gray-700 hover:text-amber-600 block transition-colors mt-0.5">
-              +91 77440 00844
+            <a href="tel:+917767000836" className="text-base font-bold text-gray-700 hover:text-amber-600 block transition-colors mt-0.5">
+              +91 77670 00836
+            </a>
+            <a href="tel:+919545899838" className="text-base font-bold text-gray-700 hover:text-amber-600 block transition-colors mt-0.5">
+              +91 95458 99838
             </a>
             <p className="text-xs text-emerald-600 font-semibold mt-2">Available 24x7 for Corporate Support</p>
           </div>
@@ -110,6 +114,9 @@ export default function Contact() {
             <span className="text-xs font-black uppercase tracking-wider text-blue-600 block mb-1">Email Us</span>
             <a href="mailto:sales@parveenfleets.in" className="text-base font-black text-[#0b1a30] hover:text-blue-600 block transition-colors break-all">
               sales@parveenfleets.in
+            </a>
+            <a href="mailto:r.kanchan@parveenfleets.in" className="text-sm font-bold text-gray-700 hover:text-blue-600 block transition-colors break-all mt-0.5">
+              r.kanchan@parveenfleets.in
             </a>
             <a href="mailto:vajidmirza@parveenfleets.in" className="text-sm font-bold text-gray-700 hover:text-blue-600 block transition-colors break-all mt-0.5">
               vajidmirza@parveenfleets.in
@@ -178,10 +185,10 @@ export default function Contact() {
 
                 <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
                   <a
-                    href="tel:+919545899838"
+                    href="tel:+917767000838"
                     className="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1.5"
                   >
-                    <span>📞</span> Call +91 95458 99838
+                    <span>📞</span> Call +91 77670 00838
                   </a>
                   <a
                     href={office.mapLink}
@@ -236,7 +243,7 @@ export default function Contact() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+91 Mobile number"
+                    placeholder="+91 XXXXXXXXXX"
                     className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm font-semibold text-black focus:outline-none focus:border-amber-500"
                   />
                 </div>

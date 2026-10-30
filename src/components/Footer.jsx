@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="tel:+919545899838"
+              href="tel:+917767000838"
               className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-[#0b1a30] text-xs font-black uppercase tracking-wider transition-colors shadow-md"
             >
               Call 24/7 Desk
@@ -96,21 +96,27 @@ export default function Footer() {
             
             <div className="space-y-3">
               <div>
-                <span className="text-xs text-gray-400 uppercase tracking-wider block font-bold">Call at:</span>
-                <a href="tel:+919545899838" className="text-base font-black text-amber-400 hover:text-amber-300 block">
-                  +91 95458 99838
+                <span className="text-xs text-gray-400 uppercase tracking-wider block font-bold mb-1">Call at:</span>
+                <a href="tel:+917767000841" className="text-sm font-bold text-amber-400 hover:text-amber-300 block">
+                  +91 77670 00841
                 </a>
-                <a href="tel:+917744000844" className="text-sm font-bold text-gray-200 hover:text-amber-300 block">
-                  +91 77440 00844
+                <a href="tel:+917767000836" className="text-sm font-bold text-gray-200 hover:text-amber-300 block mt-0.5">
+                  +91 77670 00836
+                </a>
+                <a href="tel:+919545899838" className="text-sm font-bold text-gray-200 hover:text-amber-300 block mt-0.5">
+                  +91 95458 99838
                 </a>
               </div>
 
               <div className="border-t border-white/10 pt-2.5">
-                <span className="text-xs text-gray-400 uppercase tracking-wider block font-bold">Email Us:</span>
+                <span className="text-xs text-gray-400 uppercase tracking-wider block font-bold mb-1">Email Us:</span>
                 <a href="mailto:sales@parveenfleets.in" className="text-xs text-gray-200 hover:text-amber-400 block font-medium">
                   sales@parveenfleets.in
                 </a>
-                <a href="mailto:vajidmirza@parveenfleets.in" className="text-xs text-gray-300 hover:text-amber-400 block font-medium">
+                <a href="mailto:r.kanchan@parveenfleets.in" className="text-xs text-gray-300 hover:text-amber-400 block font-medium mt-0.5">
+                  r.kanchan@parveenfleets.in
+                </a>
+                <a href="mailto:vajidmirza@parveenfleets.in" className="text-xs text-gray-300 hover:text-amber-400 block font-medium mt-0.5">
                   vajidmirza@parveenfleets.in
                 </a>
               </div>

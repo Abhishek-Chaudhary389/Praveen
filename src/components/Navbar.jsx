@@ -59,7 +59,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-5">
             {/* Phone badge */}
             <a
-              href="tel:+919545899838"
+              href="tel:+917767000838"
               className="flex items-center gap-2.5 text-gray-800 hover:text-blue-600 transition-colors group"
             >
               <div className="w-9 h-9 rounded-full bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center text-blue-600 transition-colors">
@@ -68,7 +68,7 @@ export default function Navbar() {
                 </svg>
               </div>
               <span className="text-sm font-bold tracking-tight text-[#0b1a30]">
-                +91 95458 99838
+                +91 77670 00838
               </span>
             </a>
 
@@ -88,7 +88,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-3">
             {/* Phone Button */}
             <a
-              href="tel:+919545899838"
+              href="tel:+917767000838"
               className="w-11 h-11 rounded-full bg-[#eef5ff] text-[#1e61d8] hover:bg-blue-100 flex items-center justify-center transition-colors shadow-xs"
               aria-label="Call Us"
             >
@@ -151,7 +151,7 @@ export default function Navbar() {
 
           <div className="pt-3 border-t border-gray-100 flex flex-col gap-3">
             <a
-              href="tel:+919545899838"
+              href="tel:+917767000838"
               className="flex items-center gap-2.5 px-4 py-2 text-sm font-bold text-gray-800"
             >
               <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
@@ -159,7 +159,7 @@ export default function Navbar() {
                   <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.28-.28.37-.68.25-1.02A11.36 11.36 0 018.96 4.3a.99.99 0 00-1-.99H4.49A1 1 0 003.5 4.31C3.89 13.9 11.6 21.6 21.19 22a1 1 0 001.01-.99v-4.49c0-.55-.44-.99-.99-.99l-1.2-.15z" />
                 </svg>
               </div>
-              <span>+91 95458 99838</span>
+              <span>+91 77670 00838</span>
             </a>
 
             <Link

@@ -1,15 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import heroImage from '../../assets/praveen Home.png';
+import { sendBookingQuery } from '../../utils/bookingDispatcher';
 
 export default function Hero() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [tripType, setTripType] = useState('self-drive');
+  const [tripType, setTripType] = useState('with-driver');
   const [passengerName, setPassengerName] = useState('');
   const [pickupLocation, setPickupLocation] = useState('');
   const [dropLocation, setDropLocation] = useState('');
   const [citySearch, setCitySearch] = useState('');
+
+  const handleSearchOrBook = () => {
+    if (pickupLocation || dropLocation || passengerName) {
+      const subject = `Booking Query: ${pickupLocation || 'Pickup'} to ${dropLocation || 'Drop'} (${passengerName || 'Client'})`;
+      const message = `Hello Parveen Fleets,%0A%0AI want to book a trip:%0A• Trip Type: ${tripType}%0A• Passenger: ${passengerName || 'Not specified'}%0A• Pickup: ${pickupLocation || 'Not specified'}%0A• Drop: ${dropLocation || 'Not specified'}%0A%0APlease provide vehicle options and quote.`;
+      const details = `PARVEEN FLEETS - HERO BOOKING QUERY%0D%0A%0D%0ATrip Type: ${tripType}%0D%0APassenger: ${passengerName || 'Not specified'}%0D%0APickup Location: ${pickupLocation || 'Not specified'}%0D%0ADrop Location: ${dropLocation || 'Not specified'}%0D%0A%0D%0APlease provide vehicle options, quotation, and confirm availability.`;
+
+      sendBookingQuery({ subject, message, details });
+    }
+    navigate('/rent');
+  };
 
   useEffect(() => {
     if (location.pathname === '/services' || location.hash === '#services') {
@@ -296,24 +308,9 @@ export default function Hero() {
         <div className="relative z-30 px-3.5 -mt-10 sm:-mt-14">
           <div className="bg-white rounded-3xl shadow-xl shadow-blue-900/10 border border-gray-100 p-4">
 
-            {/* Top 3 Tab Buttons (All in 1 Row) */}
-            <div className="grid grid-cols-3 gap-2 mb-3.5">
-              {/* Tab 1: Self Drive */}
-              <button
-                type="button"
-                onClick={() => setTripType('self-drive')}
-                className={`py-3 px-1.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${tripType === 'self-drive'
-                    ? 'bg-[#1e61d8] text-white shadow-md shadow-blue-500/25'
-                    : 'bg-[#f0f4f9] text-[#1e293b] hover:bg-gray-100'
-                  }`}
-              >
-                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H8c-.7 0-1.3.3-1.8.7C5.3 8.6 4 10 4 10s-2.7.6-4.5 1.1C.7 11.3 0 12.1 0 13v3c0 .6.4 1 1 1h2m16 0a2 2 0 11-4 0m4 0a2 2 0 10-4 0M3 17a2 2 0 114 0m-4 0a2 2 0 104 0" />
-                </svg>
-                <span className="truncate">Self Drive</span>
-              </button>
-
-              {/* Tab 2: With Driver */}
+            {/* Top 2 Tab Buttons (All in 1 Row) */}
+            <div className="grid grid-cols-2 gap-2 mb-3.5">
+              {/* Tab 1: With Driver */}
               <button
                 type="button"
                 onClick={() => setTripType('with-driver')}
@@ -328,7 +325,7 @@ export default function Hero() {
                 <span className="truncate">With Driver</span>
               </button>
 
-              {/* Tab 3: Airport Transfer */}
+              {/* Tab 2: Airport Transfer */}
               <button
                 type="button"
                 onClick={() => setTripType('airport-transfer')}
@@ -416,7 +413,7 @@ export default function Hero() {
             {/* Mobile Search Cars Action Button */}
             <button
               type="button"
-              onClick={() => navigate('/rent')}
+              onClick={handleSearchOrBook}
               className="mt-3.5 w-full py-4 rounded-2xl bg-[#1e61d8] hover:bg-blue-700 active:scale-[0.98] text-white font-bold text-base flex items-center justify-center gap-2 shadow-lg shadow-blue-500/30 transition-all cursor-pointer"
             >
               <span>Search Cars</span>
@@ -543,20 +540,6 @@ export default function Hero() {
           <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-t-3xl border border-b-0 border-gray-100 shadow-md p-1.5 gap-1">
             <button
               type="button"
-              onClick={() => setTripType('self-drive')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${tripType === 'self-drive'
-                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                }`}
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H8c-.7 0-1.3.3-1.8.7C5.3 8.6 4 10 4 10s-2.7.6-4.5 1.1C.7 11.3 0 12.1 0 13v3c0 .6.4 1 1 1h2m16 0a2 2 0 11-4 0m4 0a2 2 0 10-4 0M3 17a2 2 0 114 0m-4 0a2 2 0 104 0" />
-              </svg>
-              <span>Self Drive</span>
-            </button>
-
-            <button
-              type="button"
               onClick={() => setTripType('with-driver')}
               className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${tripType === 'with-driver'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
@@ -659,7 +642,7 @@ export default function Hero() {
               <div>
                 <button
                   type="button"
-                  onClick={() => navigate('/rent')}
+                  onClick={handleSearchOrBook}
                   className="w-full h-full min-h-[56px] py-4 px-6 rounded-2xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold text-base tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-blue-500/30 transition-all duration-200 cursor-pointer"
                 >
                   <span>Search Cars</span>
@@ -799,7 +782,7 @@ export default function Hero() {
 
               <div className="mt-8 pt-6 border-t border-gray-100">
                 <a
-                  href="tel:+919545899838"
+                  href="tel:+917767000838"
                   className="w-full py-3 rounded-xl bg-gray-100 hover:bg-amber-400 hover:text-black text-[#0b1a30] text-xs font-black uppercase tracking-wider text-center block transition-all shadow-xs"
                 >
                   Inquire This Service →
@@ -828,7 +811,7 @@ export default function Hero() {
 
               <div className="mt-8 pt-6 border-t border-gray-100">
                 <a
-                  href="tel:+919545899838"
+                  href="tel:+917767000838"
                   className="w-full py-3 rounded-xl bg-gray-100 hover:bg-amber-400 hover:text-black text-[#0b1a30] text-xs font-black uppercase tracking-wider text-center block transition-all shadow-xs"
                 >
                   Inquire This Service →
@@ -857,7 +840,7 @@ export default function Hero() {
 
               <div className="mt-8 pt-6 border-t border-gray-100">
                 <a
-                  href="tel:+919545899838"
+                  href="tel:+917767000838"
                   className="w-full py-3 rounded-xl bg-gray-100 hover:bg-amber-400 hover:text-black text-[#0b1a30] text-xs font-black uppercase tracking-wider text-center block transition-all shadow-xs"
                 >
                   Inquire This Service →
@@ -1689,11 +1672,14 @@ export default function Hero() {
                       <h4 className="text-base sm:text-lg font-black text-amber-400 mb-2">
                         Call at:
                       </h4>
-                      <a href="tel:+919545899838" className="text-base sm:text-lg font-bold text-white hover:text-amber-400 block transition-colors">
-                        +91 95458 99838
+                      <a href="tel:+917767000841" className="text-base sm:text-lg font-bold text-white hover:text-amber-400 block transition-colors">
+                        +91 77670 00841
                       </a>
-                      <a href="tel:+917744000844" className="text-base sm:text-lg font-bold text-white hover:text-amber-400 block transition-colors mt-1">
-                        +91 77440 00844
+                      <a href="tel:+917767000836" className="text-base sm:text-lg font-bold text-white hover:text-amber-400 block transition-colors mt-1">
+                        +91 77670 00836
+                      </a>
+                      <a href="tel:+919545899838" className="text-base sm:text-lg font-bold text-white hover:text-amber-400 block transition-colors mt-1">
+                        +91 95458 99838
                       </a>
                     </div>
 
@@ -1704,6 +1690,9 @@ export default function Hero() {
                       </h4>
                       <a href="mailto:sales@parveenfleets.in" className="text-xs sm:text-sm text-gray-200 hover:text-amber-400 block transition-colors font-medium break-all">
                         sales@parveenfleets.in
+                      </a>
+                      <a href="mailto:r.kanchan@parveenfleets.in" className="text-xs sm:text-sm text-gray-200 hover:text-amber-400 block transition-colors font-medium break-all mt-1">
+                        r.kanchan@parveenfleets.in
                       </a>
                       <a href="mailto:vajidmirza@parveenfleets.in" className="text-xs sm:text-sm text-gray-200 hover:text-amber-400 block transition-colors font-medium break-all mt-1">
                         vajidmirza@parveenfleets.in

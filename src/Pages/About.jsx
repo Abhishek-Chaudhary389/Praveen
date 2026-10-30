@@ -262,7 +262,7 @@ export default function About() {
             <div className="flex flex-wrap items-center gap-6 text-xs sm:text-sm">
               <div>
                 <span className="text-gray-400 block text-xs">Call 24/7 Desk:</span>
-                <span className="font-bold text-amber-400">+91 95458 99838 / +91 77440 00844</span>
+                <span className="font-bold text-amber-400">+91 77670 00841 / +91 77670 00836 / +91 95458 99838</span>
               </div>
               <div className="border-l border-white/10 pl-6">
                 <span className="text-gray-400 block text-xs">Email:</span>
